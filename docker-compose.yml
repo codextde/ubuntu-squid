@@ -1,17 +1,15 @@
-version: "3"
+version: '3'
 services:
-  proxy:
-    image: ubuntu/squid
+  squid:
+    image: ubuntu/squid:latest
+    container_name: squid-container
     ports:
       - "3128:3128"
-    environment:
-      - TZ=UTC
     volumes:
-      - ./:/etc/squid/
-    configs:
-      - source: squid
-        target: /etc/squid/squid.conf
+      - ./squid/squid.conf:/etc/squid/squid.conf
+      - squid-logs:/var/log/squid
+      - squid-cache:/var/spool/squid
 
-configs:
-  squid:
-    file: ./squid.conf
+volumes:
+  squid-logs:
+  squid-cache:
