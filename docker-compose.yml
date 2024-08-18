@@ -12,6 +12,6 @@ services:
       - source: squid
         target: /etc/squid/squid.conf
 
-  configs:
-    squid:
-      file: ./squid.conf
+configs:
+  squid:
+    file: ./squid.conf
