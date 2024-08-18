@@ -6,7 +6,7 @@ services:
     ports:
       - "3128:3128"
     volumes:
-      - ./squid/squid.conf:/etc/squid/squid.conf
+      - ./squid/:/etc/squid/
       - squid-logs:/var/log/squid
       - squid-cache:/var/spool/squid
 
