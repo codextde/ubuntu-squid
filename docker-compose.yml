@@ -7,7 +7,7 @@ services:
     environment:
       - TZ=UTC
     volumes:
-      - ./squid.conf:/etc/squid/squid.conf
+      - ./:/etc/squid/
     configs:
       - source: squid
         target: /etc/squid/squid.conf
